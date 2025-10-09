@@ -9,6 +9,7 @@
     --orangeColor: hsl(26, 100%, 55%);
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 0%);
+    --hoverPicture: hsl(223, 64%, 98%);
 }
 .container{
     width: 1500px;
@@ -118,7 +119,6 @@
 }
 
 .main_box{
-    border: 1px solid red;
     height: 100vh;
     display: flex;
     width: 1000px;
@@ -126,7 +126,6 @@
 
 /* photo box styling */
 .photo_box{
-    border: 1px solid orange;
     padding: 40px;
 }
 /* primary photo box styling */
@@ -157,5 +156,103 @@
 .thumbnail_box:hover{
     border: 3px solid var(--orangeColor);
     border-radius: 10px;
-    opacity: 0.5;
+    filter: invert(0.3);
+}
+
+/* order box styling */
+.order_box{
+    padding: 40px;
+    padding-top: 100px;
+}
+.order_box_header_text h1{
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: var(--hoverText);
+}
+.order_box_header_text h2{
+    font-size: 35px;
+    margin-top: 12px;
+}
+.order_box_info_text .info_main_text{
+    margin-top: 27px;
+    margin-bottom: 25px;
+    color: var(--hoverText);
+    line-height: 25px;
+}
+.price_info #main_price{
+    color: var(--blackColor);
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+.price_info #price_percentage{
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: var(--blackColor);
+    padding: 4px 6px;
+    color: var(--whiteColor);
+    border-radius: 6px;
+    margin-left: 6px;
+}
+#discount_price{
+    font-size: 16px;
+    text-decoration: line-through;
+    font-weight: bold;
+    color: var(--hoverText);
+}
+
+/*order box controls styling */
+
+.order_box_controls{
+    display: flex;
+    margin-top: 30px;
+}
+.arithmetic_controls{
+    display: flex;
+    gap: 40px;
+    background-color: var(--hoverPicture);
+    padding: 13px 15px;
+    border-radius: 7px;
+}
+.arithmetic_controls span{
+    display: inline-block;
+    font-weight: bold;
+}
+/* .substract_box{
+   
+} */
+.substract_box img{
+    margin-bottom: 4px;
+    width: 10px;
+}
+.addition_box img{
+    width: 10px;
+}
+
+.substract_box:hover, .addition_box:hover{
+    filter: invert(0.3);
+    cursor: pointer;
+}
+
+.add_to_cart_box{
+    background-color: var(--orangeColor);
+    font-weight: bold;
+    font-size: 15px;
+    width: 200px;
+    margin-left: 15px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    cursor: pointer;
+}
+.add_to_cart_box img{
+    width: 18px;
+}
+.add_to_cart_box:hover{
+    filter: invert(0.3);
 }
