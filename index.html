@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- header content-->
         <div class="header">
             <div class="header_main">
                 <div class="header_logo">
@@ -23,15 +24,34 @@
                  </ul>
                 </div>
             </div>
-           
             <div class="header_tabs">
                 <div class="cart_icon">
                     <img src="./images/icon-cart.svg" alt="cart_icon" />
-                    <span id="cart_number">3</span>
+                    <span class="cart_number" id="item_picked">3</span>
                     <div class="cart_box">
                         <p id="cart_header">Cart</p>
                         <div class="cart_box_items">
-                            <p id="cart_indicator">Your cart is empty.</p>
+                            <div id="cart_indicator_items">
+                              <div class="main_cart">
+                                 <div>
+                                     <img src="./images/image-product-1-thumbnail.jpg" alt="cart_item" id="cart_item_picture">
+                                 </div>
+                                 <div>
+                                   <p>Fall Limited Edition Sneakers
+                                   $125.00 x <span id="item_picked">3</span> <span id="total_sum_picked">$375.00</span>
+                                   </p>
+                                 </div>
+                                 <div>
+                                    <img src="./images/icon-delete.svg" alt="dustbin_delete" id="dustbin_delete">
+                                 </div>
+                             </div>
+                                
+                             <div class="checkout_button">
+                                     <a href="#">Checkout</a>
+                                </div>
+
+                            </div>
+                            <p id="cart_indicator_empty">Your cart is empty.</p>
                         </div>
                     </div>
                 </div>
@@ -39,8 +59,7 @@
                     <img src="./images/image-avatar.png" alt="profile_picture">
                 </div>
             </div>
-        </div>
-        
+        </div>   
         <!-- main content -->
          <div class="main_box">
             <div class="photo_box">
@@ -80,7 +99,7 @@
                     <div class="substract_box">
                          <img src="./images/icon-minus.svg" alt="substract_button" id="substract_button">
                     </div>
-                     <span>0</span>
+                     <span id="item_picked">3</span>
                     <div class="addition_box">
                         <img src="./images/icon-plus.svg" alt="addition_button" id="addition_button">
                     </div>
@@ -97,10 +116,6 @@
          </div>
 
     </div>
-     <div>
-       
-        
-     </div>
     <script src="./script.js"></script>
 </body>
 </html>

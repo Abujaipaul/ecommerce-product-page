@@ -17,6 +17,8 @@
     margin: 0px auto;
     cursor: pointer;
 }
+
+
 /* header styling */
 .header{
     display: flex;
@@ -55,13 +57,15 @@
     display: flex;
     gap: 30px;
 }
+
+
 /* cart icon and number styling */
 .cart_icon{
     padding-top: 10px;
     position: relative;
 }
 
-#cart_number{
+.cart_number{
     position: absolute;
     background-color: var(--orangeColor);
     color: var(--whiteColor);
@@ -97,13 +101,67 @@
 #cart_box_items{
     position: relative;
 }
-#cart_indicator{
+.cart_indicator_items{
+    display: flex;
+    flex-direction: column;
+}
+.main_cart{
+    display: flex;
+    position: relative;
+    padding: 13px;
+    padding-top:20px;
+    gap: 11px;
+}
+.main_cart #cart_item_picture{
+    width: 40px;
+    border-radius: 5px;
+}
+.main_cart p{
+    color: var(--hoverText);
+    padding-top: 1px;
+    line-height: 20px;
+    font-size: 15px;
+}
+.main_cart #total_sum_picked{
+    display: inline-block;
+    color: var(--blackColor);
+    font-weight: bolder;
+    padding-left: 5px;
+}
+.main_cart #dustbin_delete{
+    display: inline-block;
+    width: 12px;
+    padding-top: 18px;
+}
+.main_cart #dustbin_delete:hover{
+    filter: invert(0.1);
+}
+.checkout_button{
+    text-align: center;
+    margin-top: 20px;
+}
+.checkout_button a{
+    text-decoration: none;
+    color: var(--blackColor);
+    font-weight: bold;
+    font-size: 16px;
+    background-color: var(--orangeColor);
+    border-radius: 7px;
+    padding: 15px 99px;
+}
+.checkout_button a:hover{
+    filter: invert(0.1);
+}
+#cart_indicator_empty{
+    display: none;
     color: var(--hoverText);
     font-weight: bolder;
     position: absolute;
     right: 75px;
     bottom: 75px;
 }
+
+
 /* profile picture styling */
 .profile_picture{
     width: 45px;
@@ -159,6 +217,8 @@
     filter: invert(0.3);
 }
 
+
+
 /* order box styling */
 .order_box{
     padding: 40px;
@@ -203,6 +263,8 @@
     font-weight: bold;
     color: var(--hoverText);
 }
+
+
 
 /*order box controls styling */
 
