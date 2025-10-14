@@ -205,6 +205,11 @@
 .thumbnail_box{
     width: 85px;
 }
+.thumbnail_focus{ /* for when i click on the thumbnail picture */
+    border: 3px solid var(--orangeColor);  
+    border-radius: 10px;
+    filter: invert(0.4);
+}
 .thumbnail_box img{
     border-radius: 10px;
     width: 100%;
@@ -215,8 +220,6 @@
     border-radius: 10px;
     filter: invert(0.3);
 }
-
-
 
 /* order box styling */
 .order_box{
