@@ -3,6 +3,7 @@ const cartIcon = document.querySelector("#cart_icon_toggle")
 const cartBox = document.querySelector(".cart_box")
 const cartIndicatorItems = document.querySelector("#cart_indicator_items")
 const cartIndicatorEmpty = document.querySelector("#cart_indicator_empty")
+const cartNumber = document.querySelector(".cart_number")
 // buttons
 const deleteButton = document.querySelector("#dustbin_delete")
 const substractButton = document.querySelector("#substract_button")
@@ -17,7 +18,6 @@ const cartBoxItems = document.querySelector(".cart_box_items")
 const thumbnailPictures = document.querySelectorAll(".thumbnail_box")
 
 
-
  //to trigger the cart dropdown.
  cartIcon.addEventListener("click", () => {
      cartBox.classList.toggle("cart_disappear")
@@ -27,6 +27,7 @@ const thumbnailPictures = document.querySelectorAll(".thumbnail_box")
 function deleteItems(){
      cartIndicatorItems.remove()
      cartIndicatorEmpty.style = "display : block;"
+     cartNumber.style.display = "none"
  }
  deleteButton.addEventListener("click", deleteItems)
 
@@ -56,11 +57,12 @@ let numberOfItems = 0;
  function addItems(){
      cartBoxItems.append(cartIndicatorItems)
       cartIndicatorEmpty.style = "display : none;"
+      cartNumber.style.display = "block"
  }
 
  addToCartButton.addEventListener("click", addItems)
 
- //focus on thumbnail picture
+ //focus on thumbnail picture when clicked and remove focus when clicked again.
     thumbnailPictures.forEach((picture) => {
         picture.addEventListener("click", () => {
            picture.classList.toggle("thumbnail_focus")
