@@ -9,6 +9,7 @@ const deleteButton = document.querySelector("#dustbin_delete")
 const substractButton = document.querySelector("#substract_button")
 const additionButton = document.querySelector("#addition_button")
 const addToCartButton = document.querySelector("#add_to_cart_text")
+const closeModalButton = document.querySelector("#close_modal_button")
 // variables tragetting the item picked span.
 const itemPicked = document.querySelectorAll("#item_picked")[2]
 const cartIconPicked = document.querySelectorAll("#item_picked")[0]
@@ -16,6 +17,9 @@ const itemPickedInCart = document.querySelectorAll("#item_picked")[1]
 const cartBoxItems = document.querySelector(".cart_box_items")
 //thumbnails pictures
 const thumbnailPictures = document.querySelectorAll(".thumbnail_box")
+//modals
+const modalWindow = document.querySelector(".modal_window")
+const modalBox = document.querySelector(".modal_box")
 
 
  //to trigger the cart dropdown.
@@ -62,12 +66,31 @@ let numberOfItems = 0;
 
  addToCartButton.addEventListener("click", addItems)
 
- //focus on thumbnail picture when clicked and remove focus when clicked again.
+ //focus on thumbnail picture when clicked and remove focus when clicked again and also to open up the modal.
     thumbnailPictures.forEach((picture) => {
         picture.addEventListener("click", () => {
            picture.classList.toggle("thumbnail_focus")
+           modalWindow.style.display = "flex"
         })
     })
-
-  
  
+ //To close the modal
+ function closeModal(){
+   modalWindow.style.display = "none"
+ }
+ closeModalButton.addEventListener("click", closeModal)
+
+ //To close the modal by clicking the background
+modalWindow.addEventListener("click", (e) => {
+  if(e.target === modalWindow){
+   modalWindow.style.display = "none"
+  }
+})
+//to close the modal by clicking Escape key
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      modalWindow.style.display = "none"
+    }
+})
+
+

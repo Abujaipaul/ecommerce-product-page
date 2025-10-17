@@ -322,7 +322,7 @@
 
 /* modal window styling */
 .modal_window{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -331,7 +331,6 @@
     position: absolute;
     top: 0px;
     z-index: 10000;
-
 }
 .modal_box{
     padding: 45px;
