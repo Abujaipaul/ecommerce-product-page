@@ -10,6 +10,8 @@ const substractButton = document.querySelector("#substract_button")
 const additionButton = document.querySelector("#addition_button")
 const addToCartButton = document.querySelector("#add_to_cart_text")
 const closeModalButton = document.querySelector("#close_modal_button")
+const previousBox = document.querySelector(".previous_box")
+const nextBox = document.querySelector(".next_box")
 // variables tragetting the item picked span.
 const itemPicked = document.querySelectorAll("#item_picked")[2]
 const cartIconPicked = document.querySelectorAll("#item_picked")[0]
@@ -20,6 +22,17 @@ const thumbnailPictures = document.querySelectorAll(".thumbnail_box")
 //modals
 const modalWindow = document.querySelector(".modal_window")
 const modalBox = document.querySelector(".modal_box")
+//images object
+const sliderImages = {
+   image1 : "./images/image-product-1.jpg",
+   image2 : "./images/image-product-2.jpg",
+   image3 : "./images/image-product-3.jpg",
+   image4 : "./images/image-product-4.jpg",
+}
+//primary photo box holder
+const modalImageHolder = document.querySelector("#modal_primary_photo")
+
+
 
 
  //to trigger the cart dropdown.
@@ -66,10 +79,16 @@ let numberOfItems = 0;
 
  addToCartButton.addEventListener("click", addItems)
 
- //focus on thumbnail picture when clicked and remove focus when clicked again and also to open up the modal.
+ //focus on thumbnail picture when clicked and remove focus when clicked again 
     thumbnailPictures.forEach((picture) => {
         picture.addEventListener("click", () => {
            picture.classList.toggle("thumbnail_focus")
+        })
+    })
+
+//To open the modal 
+ thumbnailPictures.forEach((picture) => {
+        picture.addEventListener("dblclick", () => {
            modalWindow.style.display = "flex"
         })
     })
@@ -93,4 +112,15 @@ document.addEventListener("keydown", (e) => {
     }
 })
 
+// By clicking the next and previous button, the images change on the primary photo box.
 
+let counter = 1;
+function nextSlider(){
+     counter++
+     sliderImages
+      modalImageHolder.src = sliderImages.image2
+    console.log(imageHolder.src)
+}
+
+
+nextSlider()
