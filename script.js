@@ -113,14 +113,37 @@ document.addEventListener("keydown", (e) => {
 })
 
 // By clicking the next and previous button, the images change on the primary photo box.
+const counterText = document.querySelector(".counter_text")
+counterText.style = "font-size: 22px;"
+let counterIndex = 0;
 
-let counter = 1;
-function nextSlider(){
-     counter++
-     sliderImages
-      modalImageHolder.src = sliderImages.image2
-    console.log(imageHolder.src)
+const objectSliderImages = Object.values(sliderImages)
+const totalImages = objectSliderImages.length
+
+function updateSlider(){
+   modalImageHolder.src = objectSliderImages[counterIndex]
+   counterText.innerText = counterIndex + 1;
 }
 
+function nextButton(){
+  counterIndex++
+  if(counterIndex >= totalImages){
+   counterIndex = 0
+  }
 
-nextSlider()
+  updateSlider()
+}
+
+function previousButton(){
+   counterIndex--
+   if(counterIndex < 0){
+      counterIndex = totalImages - 1
+   }
+
+   updateSlider()
+}
+
+nextBox.addEventListener("click", nextButton)
+previousBox.addEventListener("click", previousButton)
+
+updateSlider()
