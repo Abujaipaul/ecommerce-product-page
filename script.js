@@ -147,3 +147,15 @@ nextBox.addEventListener("click", nextButton)
 previousBox.addEventListener("click", previousButton)
 
 updateSlider()
+
+//hamburger menu functionality
+const hamburgerMenuIcon = document.querySelector("#hamburger_menu_icon")
+const closeMenuIcon = document.querySelector("#close_menu_icon")
+const mainMenuBox = document.querySelector(".main_menu_box")
+
+   hamburgerMenuIcon.addEventListener("click", () => {
+      mainMenuBox.style.display = "block"
+   })
+   closeMenuIcon.addEventListener("click", () => {
+      mainMenuBox.style.display = "none"
+   })
