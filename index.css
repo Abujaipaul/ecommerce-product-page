@@ -13,6 +13,7 @@
     --blackColor: hsl(0, 0%, 0%);
     --hoverPicture: hsl(223, 64%, 98%);
 }
+
 body {
     font-family: 'Kumbh Sans', sans-serif;
     font-weight: 400; /* Default weight for the body */
@@ -67,15 +68,19 @@ h1, h2, h3, strong {
     display: flex;
     gap: 30px;
 }
-
+.hamburger_menu{
+    display: none;
+}
 /* main box styling */
 .main_box{
     height: 100vh;
     display: flex;
     width: 1000px;
 }
-
-
+/* mobile photo box styling */
+.mobile_photo_box{
+    display: none;
+}
 /* cart icon and number styling */
 .cart_icon{
     padding-top: 10px;
@@ -361,7 +366,7 @@ h1, h2, h3, strong {
     cursor: pointer;
     filter: sepia(700%) saturate(700%) brightness(100%);
 }
-.previous_box{
+.previous_box {
     background-color: var(--whiteColor);
     border-radius: 50%;
     width: 45px;
@@ -410,6 +415,9 @@ h1, h2, h3, strong {
 }
 
 
+
+
+
 /* responsiveness for phone size screens  */
 @media only screen and (max-width: 450px){
    .main_container{
@@ -425,16 +433,17 @@ h1, h2, h3, strong {
        justify-content:flex-start;
        padding: 30px 5px;
        padding-left: 25px;
-       padding-bottom: 0px;
+       padding-bottom: 20px;
        border-bottom: 1px solid var(--textColor);
        position: relative;
        margin-bottom: 15px;
     }
     .header_tabs{
-        margin-left: 45px;
+        margin-left: 88px;
     }
     /* hamburger menu and page styling */
     .hamburger_menu{
+        display: inline-block;
         position: relative;
         margin-right: 16px;
         padding-top: 12px;
@@ -485,10 +494,104 @@ h1, h2, h3, strong {
     width: 40px;
     height: 40px;
     }
+    .main_box{
+        flex-direction: column;
+        width: 450px;
+    }
+    .photo_box{
+        display: none;
+    }
+    .order_box{
+        width: 100%;
+        padding-top: 25px;
+    }
+    /* price info styling */
+    .price_info{
+        display: flex;
+        justify-content:space-between;
+    }
+    #discount_price{
+        margin-top: 10px;
+    }
+    /* order box controls styling */
+    .order_box_controls{
+        flex-direction: column;
+           gap: 22px;
+    }
+    .arithmetic_controls{
+        display: flex;
+        justify-content: space-between;
+        font-size: 21px;
+    }
+    .substract_box img{
+        width: 15px;
+    }
+    .addition_box img{
+        width: 15px;
+    }
+    /* addto cart box styling */
+    .add_to_cart_box{
+        width: 100%;
+        margin-left: 0px;
+        padding: 18px 0px;
+        font-size: 18px;
+        font-weight: bolder;
+    }
+    #add_to_cart_icon{
+        width: 25px;
+        filter: invert(-9);
+    }
+    /* mobile photo box styling */
+    .mobile_photo_box{
+        display: block;
+    }
+    .mobile_photo_holder{
+        width: 450px;
+        height: 350px;
+    }
+    .mobile_photo_holder img{
+        width: 100%;
+        height: 100%;
+    }
+   /* mobile phone buttons */
+   .previous_box_mobile {
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    padding-top: 13px;
+    padding-left: 15px;
+    position: absolute;
+    bottom: 350px;
+    left: 18px;
+}
+.previous_box_mobile #previous_icon_button_mobile:hover{
+    filter: invert(100%) sepia(1%) saturate(1200%) brightness(100%);
+}
+.next_box_mobile{
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    padding-top: 13px;
+    padding-left: 15px;
+   position: absolute;
+    bottom: 350px;
+    right: 18px;
+}
+.next_box_mobile #next_icon_button_mobile:hover{
+    filter: invert(100%) sepia(1%) saturate(1200%);
+}
+
+  /* work on the buttons oh and position it wella */
 
 
 
 
+
+
+
+  
 
 
 

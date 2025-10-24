@@ -159,3 +159,5 @@ const mainMenuBox = document.querySelector(".main_menu_box")
    closeMenuIcon.addEventListener("click", () => {
       mainMenuBox.style.display = "none"
    })
+
+   
