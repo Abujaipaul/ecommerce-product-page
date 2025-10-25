@@ -12,6 +12,8 @@ const addToCartButton = document.querySelector("#add_to_cart_text")
 const closeModalButton = document.querySelector("#close_modal_button")
 const previousBox = document.querySelector(".previous_box")
 const nextBox = document.querySelector(".next_box")
+const previousBoxMobile = document.querySelector(".previous_box_mobile")
+const nextBoxMobile = document.querySelector(".next_box_mobile")
 // variables tragetting the item picked span.
 const itemPicked = document.querySelectorAll("#item_picked")[2]
 const cartIconPicked = document.querySelectorAll("#item_picked")[0]
@@ -31,7 +33,8 @@ const sliderImages = {
 }
 //primary photo box holder
 const modalImageHolder = document.querySelector("#modal_primary_photo")
-
+//mobile photo box holder
+const mobileImageHolder = document.querySelector("#mobile_photo")
 
 
 
@@ -122,6 +125,7 @@ const totalImages = objectSliderImages.length
 
 function updateSlider(){
    modalImageHolder.src = objectSliderImages[counterIndex]
+   mobileImageHolder.src = objectSliderImages[counterIndex]
    counterText.innerText = counterIndex + 1;
 }
 
@@ -146,6 +150,9 @@ function previousButton(){
 nextBox.addEventListener("click", nextButton)
 previousBox.addEventListener("click", previousButton)
 
+previousBoxMobile.addEventListener("click", previousButton)
+nextBoxMobile.addEventListener("click", nextButton)
+
 updateSlider()
 
 //hamburger menu functionality
@@ -160,4 +167,6 @@ const mainMenuBox = document.querySelector(".main_menu_box")
       mainMenuBox.style.display = "none"
    })
 
+
+// 
    

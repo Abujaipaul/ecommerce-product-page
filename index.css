@@ -76,6 +76,7 @@ h1, h2, h3, strong {
     height: 100vh;
     display: flex;
     width: 1000px;
+    max-width: 1000px;
 }
 /* mobile photo box styling */
 .mobile_photo_box{
@@ -103,7 +104,7 @@ h1, h2, h3, strong {
     display: none;
     position: absolute;
     width: 290px;
-    height: 200px;
+    height: 210px;
     background-color: var(--whiteColor);
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px var(--textColor);
@@ -414,15 +415,11 @@ h1, h2, h3, strong {
     justify-content: center;
 }
 
-
-
-
-
 /* responsiveness for phone size screens  */
 @media only screen and (max-width: 450px){
    .main_container{
     width: 500px;
-    max-width: 450px;
+    max-width: 430px;
    }
     .header_nav ul{
         display: none;
@@ -432,7 +429,7 @@ h1, h2, h3, strong {
        display: flex;
        justify-content:flex-start;
        padding: 30px 5px;
-       padding-left: 25px;
+       padding-left: 15px;
        padding-bottom: 20px;
        border-bottom: 1px solid var(--textColor);
        position: relative;
@@ -451,8 +448,8 @@ h1, h2, h3, strong {
     .main_menu_box{
         display: none;
       background: rgba(0, 0, 0, 0.711);
-      width: 450px;
-      max-width: 400px;
+      width: 435px;
+      max-width: 430px;
       height: 100vh;
       top:-28px;
       left: -28px;
@@ -496,7 +493,7 @@ h1, h2, h3, strong {
     }
     .main_box{
         flex-direction: column;
-        width: 450px;
+        width: 430px;
     }
     .photo_box{
         display: none;
@@ -544,9 +541,11 @@ h1, h2, h3, strong {
     /* mobile photo box styling */
     .mobile_photo_box{
         display: block;
+        width: 100%;
+        position: relative;
     }
     .mobile_photo_holder{
-        width: 450px;
+        width: 100%;
         height: 350px;
     }
     .mobile_photo_holder img{
@@ -554,16 +553,23 @@ h1, h2, h3, strong {
         height: 100%;
     }
    /* mobile phone buttons */
-   .previous_box_mobile {
+   .mobile_photo_buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 140px;
+   }
+    .previous_box_mobile {
     background-color: var(--whiteColor);
     border-radius: 50%;
     width: 45px;
     height: 45px;
     padding-top: 13px;
     padding-left: 15px;
-    position: absolute;
+    /* position: absolute;
     bottom: 350px;
-    left: 18px;
+    left: 18px; */
 }
 .previous_box_mobile #previous_icon_button_mobile:hover{
     filter: invert(100%) sepia(1%) saturate(1200%) brightness(100%);
@@ -575,39 +581,82 @@ h1, h2, h3, strong {
     height: 45px;
     padding-top: 13px;
     padding-left: 15px;
-   position: absolute;
+   /* position: absolute;
     bottom: 350px;
-    right: 18px;
+    right: 18px; */
 }
 .next_box_mobile #next_icon_button_mobile:hover{
-    filter: invert(100%) sepia(1%) saturate(1200%);
+    filter: invert(100%) sepia(1%) saturate(1200%) brightness(100%);
+}
+.cart_box{
+    display: none;
+    position: absolute;
+    width: 410px;
+    height: 310px;
+    background-color: var(--whiteColor);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px var(--textColor);
+    right: -65px;
+    top: 90px;
+    z-index: 1000;
+}
+#cart_header{
+    padding: 30px;
+    font-size: 21px;
+}
+.cart_disappear{
+    display: block; /*in js to toggle on/off for the cart-box */
+}
+.main_cart #cart_item_picture {
+    width: 60px;
+    border-radius: 5px;
+}
+#cart_indicator_items{
+    padding: 15px 10px;
+}
+.main_cart p {
+    color: var(--hoverText);
+    padding-top: 1px;
+    line-height: 27px;
+    font-size: 19px;
+}
+.main_cart #dustbin_delete {
+    display: inline-block;
+    width: 17px;
+    padding-top: 18px;
+}
+.checkout_button{
+    margin-top: 40px;
+}
+.checkout_button a {
+    text-decoration: none;
+    color: var(--blackColor);
+    font-weight: bold;
+    font-size: 16px;
+    background-color: var(--orangeColor);
+    border-radius: 7px;
+    padding: 20px 140px;
+}
+#cart_indicator_empty {
+    display: none;
+    color: var(--hoverText);
+    font-weight: bolder;
+    position: absolute;
+    right: 130px;
+    bottom: 120px;
+}
 }
 
-  /* work on the buttons oh and position it wella */
-
-
-
-
-
-
-
-  
-
-
-
-
-    /* .main_container{
-    width: 0px;
-    max-width: 450px;
-    margin: 0px;
-    cursor: pointer;
-    position: relative;
+/* responsiveness for desktop down size screens 
+@media only screen and (min-width: 500px){
+  .main_container{
+    background-color: red;
+  }
+  .cart_box{
+    right: -45px;
+    top: 60px;
+    z-index: 1000;
 }
-    /* main box styling */
-  /* .main_box{
-    height: 100vh;
-    display: block;
-    max-width: 1000px;
-   }  */
+} */
 
-}
+
